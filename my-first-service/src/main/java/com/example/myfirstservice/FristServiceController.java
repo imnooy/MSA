@@ -19,4 +19,8 @@ public class FristServiceController {
         return "Hello World in First Service";
     }
 
+    @GetMapping("/check")
+    public String check() {
+        return "Hi, there. This is a mesasge from First Service.";
+    }
 }
