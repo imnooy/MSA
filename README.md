@@ -250,7 +250,7 @@ MS가 독립적으로 빌드가 되고 배포가 될 수 있는 장점.
 
 이러다 보니 단일 진입점을 가지고 있는 형태로써 개발하는 게 필요.
 
-서버단(백엔드)에 중간에 게이트웨이 역할을 해줄수잇는 일종의 진입로, 게이트웨이를 두고 각각의 ms에 요청되는 모든 정보에 대해 얘가 일괄적으로 처리
+서버단(백엔드)에 중간에 게이트웨이 역할을 해줄수있는 일종의 진입로, 게이트웨이를 두고 각각의 ms에 요청되는 모든 정보에 대해 얘가 일괄적으로 처리
 
 모바일앱도 상관없음.
 
@@ -268,7 +268,7 @@ MS가 독립적으로 빌드가 되고 배포가 될 수 있는 장점.
 - 정책, 회로 차단기 및 QoS 다시 시도
 - 속도 제한
 - 부하 분산
-    - ms가 가지고 잇는 하나의 서비스의 내용을 세개의 인스턴스가 나눠서 작업했다고 가정
+    - ms가 가지고 있는 하나의 서비스의 내용을 세개의 인스턴스가 나눠서 작업했다고 가정
     - ms1, ms2, ms3
     - 그럼 어디로 요청 보낼지 판단
 - 로깅(각각의 ms가 하나의 solution을 이용해 로그를 모아놓을수도있음. 물론 로그만 전문적으로 처리해줄수 잇는 시스템 (ex. ELK)써서 처리할 수도 있다.)
@@ -489,7 +489,7 @@ spring:
 
 ---
 
-### Custom Filter 만들
+### Custom Filter 만들기
 
 ```bash
 @Component
@@ -538,9 +538,9 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
     - 가장 먼저 실행되고 가장 나중에 종료됨.
 
 ```yaml
-.
-.
-.
+	.
+	.
+	.
 spring:
   application:
     name: gateway-service
@@ -561,15 +561,15 @@ spring:
 #            - AddRequestHeader=first-request, first-request-header2
 #            - AddResponseHeader=first-response, first-response-header2
             - CustomFilter
-      .
-			.
-			.
+     	.
+	.
+	.
 ```
 
 ![Untitled](images/Untitled%2025.png)
 
 - 근데 저렇게 yml에 값을 직접 타이핑 하면 귀찮다.
-    - 추후애…
+    - 추후에…
 
 
 ### LoggingFilter
