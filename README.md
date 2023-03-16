@@ -658,14 +658,14 @@ routes:
           filters:
             - CustomFilter
         - id: second-service
-          uri: lb://MY-FIRST-SERVICE
+          uri: lb://MY-SECOND-SERVICE
           predicates:
             - Path=/second-service/**
 ```
 
 - uri 바꿔주기
     - `uri: lb://MY-FIRST-SERVICE`
-    - `uri: lb://MY-FIRST-SERVICE`
+    - `uri: lb://MY-SECOND-SERVICE`
 
 ![Untitled](images/Untitled%2031.png)
 
